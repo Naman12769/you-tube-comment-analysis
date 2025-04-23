@@ -1,9 +1,11 @@
-import mlflow
-mlflow.set_tracking_uri("https://dagshub.com/Naman12769/you-tube-comment-analysis.mlflow")
+import dagshub
+dagshub.init(repo_owner='Naman12769', repo_name='you-tube-comment-analysis', mlflow=True)
 
+import mlflow
 with mlflow.start_run():
-  mlflow.log_param("param1",15)
-  mlflow.log_metric("metric1",0.89)
+  mlflow.log_param('parameter name', 0.89)
+  mlflow.log_metric('metric name', 1)
+
 
 import numpy as np
 import pandas as pd
@@ -71,6 +73,7 @@ y = df['category']  # Assuming 'sentiment' is the target variable (0 or 1 for bi
 X.shape
 y.shape
 mlflow.set_tracking_uri("https://dagshub.com/Naman12769/you-tube-comment-analysis.mlflow")
+# mlflow.
 
 # Set or create an experiment
 mlflow.set_experiment("RF Baseline")
